@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    Mat img = imread("C:/Users/domin/Desktop/QUINTO CUATRIMESTRE/PROGRAMACION AVANZADA/PAR 1/Opencv_Test/img/peakpx.jpg");
+    Mat img = imread("D:/Visual Studio/5A-TOPICOS-AVANZADOS-DE-PROGRAMACION/PROGRAMACION AVANZADA/PAR 1/Opencv_Test/img/peakpx.jpg");
 
     if (img.empty())
     {
