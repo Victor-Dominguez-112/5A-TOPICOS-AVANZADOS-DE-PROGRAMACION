@@ -98,7 +98,7 @@ namespace ProyectoFinal {
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar1))->BeginInit();
             this->SuspendLayout();
             // 
-            // PICTUREBOX
+            // PICTUREBOX   
             // 
             this->pictureBox1->BackColor = System::Drawing::Color::DimGray;
             this->pictureBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
