@@ -16,7 +16,7 @@
  */
 class Arreglo {
 private:
-    static const int MAX = 10000; /**< Tamaño maximo permitido para el arreglo estatico. */
+    static const int MAX = 100000; /**< Tamaño maximo permitido para el arreglo estatico. */
     int arreglo[MAX];              /**< Arreglo interno que almacena los datos. */
     int n;                         /**< Tamaño lógico actual (elementos en uso). */
 

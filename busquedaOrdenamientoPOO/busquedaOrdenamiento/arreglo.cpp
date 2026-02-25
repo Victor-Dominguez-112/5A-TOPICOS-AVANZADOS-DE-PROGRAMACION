@@ -37,12 +37,16 @@ void Arreglo::mostrarMenu()
 /**
  * @brief Imprime el contenido actual del arreglo en la consola.
  */
-void Arreglo::mostrarArreglo() 
-{
-    cout << "\nArreglo: ";
-    for (int i = 0; i < n; i++)
-        cout << arreglo[i] << " ";
-    cout << endl;
+void Arreglo::mostrarArreglo() {
+    if (n > 100) {
+        cout << "\n[Arreglo de " << n << " elementos. Es muy grande para imprimirlo en pantalla]" << endl;
+    }
+    else {
+        cout << "\nArreglo: ";
+        for (int i = 0; i < n; i++)
+            cout << arreglo[i] << " ";
+        cout << endl;
+    }
 }
 
 /**
@@ -182,7 +186,7 @@ void Arreglo::quickSort(int izquierda, int derecha, int& comparaciones, int& int
  */
 void Arreglo::merge(int izquierda, int medio, int derecha, int& comparaciones) 
 {
-    int temp[10000]; // suficiente para MAX
+    int temp[100000]; // suficiente para MAX
     int i = izquierda, j = medio + 1, k = 0;
     while (i <= medio && j <= derecha) 
     {
