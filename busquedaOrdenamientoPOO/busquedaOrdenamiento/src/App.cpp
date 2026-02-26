@@ -1,39 +1,12 @@
 /**
- * @file main.cpp
- * @brief Punto de entrada principal para el programa Orientado a Objetos (POO).
+ * @file App.cpp
+ * @brief Implementacion de la logica principal de la aplicacion POO.
  */
+#include "App.h"
 #include <iostream>
-#include <chrono>
-#include "Arreglo.h"
 using namespace std;
 
-// Función para medir tiempo en microsegundos
-/**
- * @brief Funcion plantilla (template) para medir el tiempo de ejecucion en microsegundos.
- * * Esta version utiliza 'forward' para soportar expresiones lambda con multiples argumentos,
- * haciendola mas robusta y escalable que la version base.
- * * @tparam Func El tipo de dato deducido de la funcion/lambda a ejecutar.
- * @tparam Args Paquete de parametros deducidos (variadic templates) que recibe la funcion.
- * @param funcion La funcion o expresion lambda que se desea medir.
- * @param args Los argumentos que se pasaran a la funcion.
- * @return double El tiempo total que tardo en ejecutarse la funcion, expresado en microsegundos.
- */
-template<typename Func, typename... Args>
-double medirTiempo(Func funcion, Args&&... args) 
-{
-    auto inicio = chrono::high_resolution_clock::now();
-    funcion(forward<Args>(args)...);
-    auto fin = chrono::high_resolution_clock::now();
-    chrono::duration<double, micro> duracion = fin - inicio;
-    return duracion.count();
-}
-
-/**
- * @brief Funcion principal que instancia un objeto de tipo Arreglo y maneja la interaccion.
- * @return int Codigo de salida estandar (0 para exito).
- */
-int main() {
-    Arreglo miArreglo;
+void App::ejecutar() {
     int opcion, metodo;
     int valor, posicion;
     int comparaciones = 0, intercambios = 0;
@@ -42,8 +15,7 @@ int main() {
         miArreglo.mostrarMenu();
         cin >> opcion;
 
-        switch (opcion) 
-        {
+        switch (opcion) {
         case 1: // Busqueda secuencial
             miArreglo.mostrarArreglo();
             valor = miArreglo.pedirValor();
@@ -134,6 +106,4 @@ int main() {
         }
 
     } while (opcion != 6);
-
-    return 0;
 }
