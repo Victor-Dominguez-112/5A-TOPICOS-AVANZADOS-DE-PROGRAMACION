@@ -15,7 +15,7 @@ using namespace std::chrono;
 template<typename Func>
 double medirTiempo(Func funcion) {
     auto inicio = high_resolution_clock::now();
-    funcion();  // llama a la lambda
+    funcion();  
     auto fin = high_resolution_clock::now();
     return duration_cast<microseconds>(fin - inicio).count() / 1000.0; // ms
 }

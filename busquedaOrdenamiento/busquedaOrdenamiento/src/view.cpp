@@ -14,13 +14,13 @@ using namespace std;
  */
 void mostrarMenu()
 {
-    cout << "\n=== MENU ===\n";
-    cout << "1. Busqueda Secuencial\n";
-    cout << "2. Busqueda Binaria (ordena automaticamente)\n";
-    cout << "3. Ordenar Arreglo\n";
-    cout << "4. Generar numeros aleatorios CON repeticion\n";
-    cout << "5. Generar numeros aleatorios SIN repeticion\n";
-    cout << "6. Salir\n";
+    cout << "\n=== MENU ===" << endl;
+    cout << "1. Busqueda Secuencial" << endl;
+    cout << "2. Busqueda Binaria (ordena automaticamente)" << endl;
+    cout << "3. Ordenar Arreglo" << endl;
+    cout << "4. Generar numeros aleatorios CON repeticion" << endl;
+    cout << "5. Generar numeros aleatorios SIN repeticion" << endl;
+    cout << "6. Salir" << endl;
     cout << "Seleccione opcion: ";
 }
 
@@ -62,12 +62,12 @@ int pedirValor()
 int mostrarMenuOrdenamiento()
 {
     int opcion;
-    cout << "\n=== METODOS DE ORDENAMIENTO ===\n";
-    cout << "1. Burbuja\n";
-    cout << "2. Seleccion\n";
-    cout << "3. Insercion\n";
-    cout << "4. QuickSort\n";
-    cout << "5. MergeSort\n";
+    cout << "\n=== METODOS DE ORDENAMIENTO ===" << endl;
+    cout << "1. Burbuja" << endl;
+    cout << "2. Seleccion" << endl;
+    cout << "3. Insercion" << endl;
+    cout << "4. QuickSort" << endl;
+    cout << "5. MergeSort" << endl;
     cout << "Seleccione metodo: ";
     cin >> opcion;
     return opcion;

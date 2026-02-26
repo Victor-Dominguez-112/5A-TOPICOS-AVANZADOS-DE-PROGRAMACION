@@ -23,11 +23,11 @@ int busquedaSecuencial(int arreglo[], int n, int valor)
     {
         if (arreglo[i] == valor)
         {
-            return i;  // devuelve posición
+            return i;  // devuelve la posición
         }
     }
 
-    return -1; // no encontrado
+    return -1; // valor no encontrado
 }
 
 /**

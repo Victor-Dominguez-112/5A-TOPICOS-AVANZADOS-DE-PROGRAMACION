@@ -56,7 +56,7 @@ void ejecutarApp() {
             break;
         }
 
-        case 3: // Ordenamiento
+        case 3: // Menu de nuestro Ordenamiento 
         {
             metodo = mostrarMenuOrdenamiento();
             comparaciones = intercambios = 0;

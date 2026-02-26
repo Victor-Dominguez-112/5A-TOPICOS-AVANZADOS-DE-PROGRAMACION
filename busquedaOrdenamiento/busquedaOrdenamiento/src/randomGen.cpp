@@ -46,7 +46,8 @@ void generarAleatoriosSinRepeticion(int arreglo[], int& n, int tam, int M)
     srand(time(NULL));
     int max_val = (M > 0) ? M : n * 10;
     int* aux = new int[max_val];
-    for (int i = 0; i < max_val; i++) aux[i] = i;
+    for (int i = 0; i < max_val; i++) 
+        aux[i] = i;
 
     cout << "\nGenerando numeros aleatorios SIN repeticion:" << endl;
     for (int i = 0; i < n; i++)

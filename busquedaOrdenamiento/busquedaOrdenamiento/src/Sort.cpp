@@ -155,7 +155,7 @@ void merge(int arreglo[], int izquierda, int medio, int derecha, int& comparacio
     for (i = izquierda, k = 0; i <= derecha; i++, k++)
         arreglo[i] = temp[k];
 }
-
+//bye
 /**
  * @brief Ordena un arreglo utilizando el algoritmo recursivo MergeSort.
  * * Divide el arreglo en mitades repetidamente hasta que tienen tamaño 1,
