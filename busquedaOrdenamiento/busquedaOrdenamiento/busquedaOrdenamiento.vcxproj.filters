@@ -15,33 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="busquedaOrdenamiento.cpp">
+    <ClCompile Include="src\busquedaOrdenamiento.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="search.cpp">
+    <ClCompile Include="src\randomGen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="view.cpp">
+    <ClCompile Include="src\search.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sort.cpp">
+    <ClCompile Include="src\Sort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="randomGen.cpp">
+    <ClCompile Include="src\view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\App.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="search.h">
+    <ClInclude Include="include\randomGen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="view.h">
+    <ClInclude Include="include\search.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="sort.h">
+    <ClInclude Include="include\sort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="randomGen.h">
+    <ClInclude Include="include\view.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\App.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

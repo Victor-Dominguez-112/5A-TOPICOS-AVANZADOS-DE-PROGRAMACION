@@ -18,6 +18,21 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\App.cpp" />
+    <ClCompile Include="src\busquedaOrdenamiento.cpp" />
+    <ClCompile Include="src\randomGen.cpp" />
+    <ClCompile Include="src\search.cpp" />
+    <ClCompile Include="src\Sort.cpp" />
+    <ClCompile Include="src\view.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\App.h" />
+    <ClInclude Include="include\randomGen.h" />
+    <ClInclude Include="include\search.h" />
+    <ClInclude Include="include\sort.h" />
+    <ClInclude Include="include\view.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -102,6 +117,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -122,19 +138,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Sort.cpp" />
-    <ClCompile Include="busquedaOrdenamiento.cpp" />
-    <ClCompile Include="search.cpp" />
-    <ClCompile Include="randomGen.cpp" />
-    <ClCompile Include="view.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="randomGen.h" />
-    <ClInclude Include="search.h" />
-    <ClInclude Include="sort.h" />
-    <ClInclude Include="view.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

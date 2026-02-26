@@ -1,58 +1,29 @@
 /**
- * @file main.cpp
- * @brief Punto de entrada principal del programa. Integra los modulos de busqueda, ordenamiento y generacion de datos.
+ * @file app.cpp
+ * @brief Implementacion de la logica del menu interactivo.
  */
-
+#include "app.h"
 #include <iostream>
-#include <chrono>
 #include "sort.h"
 #include "search.h"
 #include "view.h"
 #include "randomGen.h"
+
 using namespace std;
-using namespace std::chrono;
 
-// Función plantilla para medir tiempo usando lambdas
-/**
- * @brief Funcion plantilla (template) para medir el tiempo de ejecucion de una tarea.
- * * Utiliza la libreria <chrono> para capturar marcas de tiempo de alta resolucion
- * antes y despues de ejecutar una funcion. Ideal para medir el rendimiento de los
- * algoritmos de busqueda y ordenamiento.
- * * @tparam Func El tipo de dato de la funcion (generalmente deducido por el compilador al usar lambdas).
- * @param funcion La funcion (o expresion lambda) cuya ejecucion sera medida.
- * @return double El tiempo exacto de ejecucion en milisegundos (ms).
- */
-template<typename Func>
-double medirTiempo(Func funcion) {
-    auto inicio = high_resolution_clock::now();
-    funcion();  // llama a la lambda
-    auto fin = high_resolution_clock::now();
-    return duration_cast<microseconds>(fin - inicio).count() / 1000.0; // ms
-}
-
-/**
- * @brief Funcion principal que maneja el ciclo de vida del programa y el menu interactivo.
- * * Controla un arreglo estatico de soporte e interactua con el usuario para determinar
- * el tamaño logico del arreglo (N, N*N o N*M). Integra las llamadas a las funciones
- * de busqueda, ordenamiento y generacion, midiendo el tiempo de cada accion.
- * * @return int Codigo de salida (0 si la ejecucion es exitosa).
- */
-int main()
-{
-    int arreglo[1000];  // soporte para N*N o N*M
+void ejecutarApp() {
+    int arreglo[100000];  // Soporte para arreglos grandes (pruebas de 10,000+)
     int n = 10;
     int opcion, metodo;
     int posicion, valor;
     int comparaciones, intercambios;
     int N, M;
 
-    do
-    {
+    do {
         mostrarMenu();
         cin >> opcion;
 
-        switch (opcion)
-        {
+        switch (opcion) {
         case 1: // Búsqueda secuencial
         {
             mostrarArreglo(arreglo, n);
@@ -167,6 +138,4 @@ int main()
         }
 
     } while (opcion != 6);
-
-    return 0;
 }
