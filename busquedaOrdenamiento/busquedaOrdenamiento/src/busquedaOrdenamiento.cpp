@@ -5,7 +5,7 @@
 #include "app.h"
 
 int main() {
-    // Se ejecuta toda la logica que esta separada en app.cpp
+    // Se ejecutara toda la logica que esta separada en app.cpp
     ejecutarApp();
 
     return 0;
