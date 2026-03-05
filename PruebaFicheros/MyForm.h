@@ -257,7 +257,7 @@ namespace PruebaFicheros {
 #pragma endregion
 	private: System::Void bbtterminado_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		// 1. Validar que los campos de texto no estén vacíos
+		//validamos que todos nuestros campos de texto no estén vacíos y si lo estan mandamos un error diciendo que se tienen que llenar
 		if (String::IsNullOrWhiteSpace(this->nombres1->Text) ||
 			String::IsNullOrWhiteSpace(this->apellidomaterno->Text) ||
 			String::IsNullOrWhiteSpace(this->apellidomaterno->Text) ||
@@ -266,7 +266,7 @@ namespace PruebaFicheros {
 		{
 			MessageBox::Show("Por favor, llena todos los campos antes de registrar.",
 				"Datos incompletos", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-			return; // Detiene el proceso para que no guarde nada
+			return; //detenemos el programa de guardado para que este no guarde nada
 		}
 
 		//recolectamos toda la información de nuestro formulario y verificamos que todos las etiquetas de nommbre, apellidopaterno, etc. coincidan con los nombres de los controles
