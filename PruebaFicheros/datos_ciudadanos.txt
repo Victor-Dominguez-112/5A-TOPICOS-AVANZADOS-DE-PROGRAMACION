@@ -1,0 +1,8 @@
+--- Nuevo Registro ---
+Nombres: Victor Ricardo
+Apellido Paterno: Dominguez
+Apellido Materno: Cruz
+Fecha de Nacimiento: 22/04/2002
+CURP: QEYF08022BRUFFABU
+Domicilio: Blvd. Bernardo Quintana Arrioja 4100, Alamos
+
