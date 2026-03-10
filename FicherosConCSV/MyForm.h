@@ -36,8 +36,9 @@ namespace FicherosConCSV {
     private: System::Windows::Forms::DataGridViewTextBoxColumn^ colApePat;
     private: System::Windows::Forms::DataGridViewTextBoxColumn^ colApeMat;
     private: System::Windows::Forms::DataGridViewTextBoxColumn^ colMatricula;
+    private: System::Windows::Forms::Button^ btnCargar;
+
     private: System::Windows::Forms::DataGridViewTextBoxColumn^ colCurp;
-    private: System::DirectoryServices::DirectorySearcher^ directorySearcher1;
 
 
     public:
@@ -68,22 +69,20 @@ namespace FicherosConCSV {
         //aquí se configuran las propiedades visuales de todos los controles del formulario
         void InitializeComponent(void)
         {
-            //estilos visuales para cada columna de la tabla
-            System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-            System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle7 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-            System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle8 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-            System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle9 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-            System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle10 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-            
+            System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+            System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+            System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+            System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+            System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
             this->Alumnos = (gcnew System::Windows::Forms::DataGridView());
-            this->Filtros = (gcnew System::Windows::Forms::ComboBox());
-            this->btnOrdenar = (gcnew System::Windows::Forms::Button());
-            this->directorySearcher1 = (gcnew System::DirectoryServices::DirectorySearcher());
             this->colNombre = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->colApePat = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->colApeMat = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->colMatricula = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->colCurp = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+            this->Filtros = (gcnew System::Windows::Forms::ComboBox());
+            this->btnOrdenar = (gcnew System::Windows::Forms::Button());
+            this->btnCargar = (gcnew System::Windows::Forms::Button());
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Alumnos))->BeginInit();
             this->SuspendLayout();
             // 
@@ -101,10 +100,71 @@ namespace FicherosConCSV {
             this->Alumnos->Size = System::Drawing::Size(938, 390);
             this->Alumnos->TabIndex = 2;
             // 
+            // colNombre
+            // 
+            dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::Crimson;
+            dataGridViewCellStyle1->SelectionForeColor = System::Drawing::Color::Black;
+            this->colNombre->DefaultCellStyle = dataGridViewCellStyle1;
+            this->colNombre->HeaderText = L"Nombre";
+            this->colNombre->MinimumWidth = 6;
+            this->colNombre->Name = L"colNombre";
+            this->colNombre->Width = 125;
+            // 
+            // colApePat
+            // 
+            dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::Crimson;
+            dataGridViewCellStyle2->SelectionForeColor = System::Drawing::Color::Black;
+            this->colApePat->DefaultCellStyle = dataGridViewCellStyle2;
+            this->colApePat->HeaderText = L"Apellido Paterno";
+            this->colApePat->MinimumWidth = 6;
+            this->colApePat->Name = L"colApePat";
+            this->colApePat->Width = 125;
+            // 
+            // colApeMat
+            // 
+            dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            dataGridViewCellStyle3->SelectionBackColor = System::Drawing::Color::Crimson;
+            dataGridViewCellStyle3->SelectionForeColor = System::Drawing::Color::Black;
+            this->colApeMat->DefaultCellStyle = dataGridViewCellStyle3;
+            this->colApeMat->HeaderText = L"Apellido Materno";
+            this->colApeMat->MinimumWidth = 6;
+            this->colApeMat->Name = L"colApeMat";
+            this->colApeMat->Width = 125;
+            // 
+            // colMatricula
+            // 
+            dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            dataGridViewCellStyle4->SelectionBackColor = System::Drawing::Color::Crimson;
+            dataGridViewCellStyle4->SelectionForeColor = System::Drawing::Color::Black;
+            this->colMatricula->DefaultCellStyle = dataGridViewCellStyle4;
+            this->colMatricula->HeaderText = L"Matrícula";
+            this->colMatricula->MinimumWidth = 6;
+            this->colMatricula->Name = L"colMatricula";
+            this->colMatricula->Width = 125;
+            // 
+            // colCurp
+            // 
+            dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            dataGridViewCellStyle5->SelectionBackColor = System::Drawing::Color::Crimson;
+            dataGridViewCellStyle5->SelectionForeColor = System::Drawing::Color::Black;
+            this->colCurp->DefaultCellStyle = dataGridViewCellStyle5;
+            this->colCurp->HeaderText = L"Curp";
+            this->colCurp->MinimumWidth = 6;
+            this->colCurp->Name = L"colCurp";
+            this->colCurp->Width = 150;
+            // 
             // Filtros
             // 
             this->Filtros->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-            this->Filtros->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->Filtros->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
             this->Filtros->Location = System::Drawing::Point(40, 27);
             this->Filtros->Name = L"Filtros";
             this->Filtros->Size = System::Drawing::Size(252, 25);
@@ -123,67 +183,18 @@ namespace FicherosConCSV {
             this->btnOrdenar->UseVisualStyleBackColor = false;
             this->btnOrdenar->Click += gcnew System::EventHandler(this, &MyForm::btnOrdenar_Click);
             // 
-            // directorySearcher1
+            // btnCargar
             // 
-            this->directorySearcher1->ClientTimeout = System::TimeSpan::Parse(L"-00:00:01");
-            this->directorySearcher1->ServerPageTimeLimit = System::TimeSpan::Parse(L"-00:00:01");
-            this->directorySearcher1->ServerTimeLimit = System::TimeSpan::Parse(L"-00:00:01");
-            // 
-            //             --- Configuración de estilos de cada columna ---
-            // Columna Nombre
-            // 
-            dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            dataGridViewCellStyle6->SelectionBackColor = System::Drawing::Color::Crimson;
-            dataGridViewCellStyle6->SelectionForeColor = System::Drawing::Color::Black;
-            this->colNombre->DefaultCellStyle = dataGridViewCellStyle6;
-            this->colNombre->HeaderText = L"Nombre";
-            this->colNombre->MinimumWidth = 6;
-            this->colNombre->Name = L"colNombre";
-            this->colNombre->Width = 125;
-            // 
-            // Columna Apellido Paterno
-            // 
-            dataGridViewCellStyle7->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            dataGridViewCellStyle7->SelectionBackColor = System::Drawing::Color::Crimson;
-            dataGridViewCellStyle7->SelectionForeColor = System::Drawing::Color::Black;
-            this->colApePat->DefaultCellStyle = dataGridViewCellStyle7;
-            this->colApePat->HeaderText = L"Apellido Paterno";
-            this->colApePat->MinimumWidth = 6;
-            this->colApePat->Name = L"colApePat";
-            this->colApePat->Width = 125;
-            // 
-            // Columna Apellido Materno
-            // 
-            dataGridViewCellStyle8->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            dataGridViewCellStyle8->SelectionBackColor = System::Drawing::Color::Crimson;
-            dataGridViewCellStyle8->SelectionForeColor = System::Drawing::Color::Black;
-            this->colApeMat->DefaultCellStyle = dataGridViewCellStyle8;
-            this->colApeMat->HeaderText = L"Apellido Materno";
-            this->colApeMat->MinimumWidth = 6;
-            this->colApeMat->Name = L"colApeMat";
-            this->colApeMat->Width = 125;
-            // 
-            // Columna Matricula
-            // 
-            dataGridViewCellStyle9->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            dataGridViewCellStyle9->SelectionBackColor = System::Drawing::Color::Crimson;
-            dataGridViewCellStyle9->SelectionForeColor = System::Drawing::Color::Black;
-            this->colMatricula->DefaultCellStyle = dataGridViewCellStyle9;
-            this->colMatricula->HeaderText = L"Matrícula";
-            this->colMatricula->MinimumWidth = 6;
-            this->colMatricula->Name = L"colMatricula";
-            this->colMatricula->Width = 125;
-            // 
-            // Columna Curp
-            // 
-            dataGridViewCellStyle10->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            dataGridViewCellStyle10->SelectionBackColor = System::Drawing::Color::Crimson;
-            dataGridViewCellStyle10->SelectionForeColor = System::Drawing::Color::Black;
-            this->colCurp->DefaultCellStyle = dataGridViewCellStyle10;
-            this->colCurp->HeaderText = L"Curp";
-            this->colCurp->MinimumWidth = 6;
-            this->colCurp->Name = L"colCurp";
-            this->colCurp->Width = 150;
+            this->btnCargar->BackColor = System::Drawing::SystemColors::ControlLight;
+            this->btnCargar->Font = (gcnew System::Drawing::Font(L"Arial Black", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->btnCargar->Location = System::Drawing::Point(472, 22);
+            this->btnCargar->Name = L"btnCargar";
+            this->btnCargar->Size = System::Drawing::Size(205, 34);
+            this->btnCargar->TabIndex = 4;
+            this->btnCargar->Text = L"CARGAR ARCHIVO";
+            this->btnCargar->UseVisualStyleBackColor = false;
+            this->btnCargar->Click += gcnew System::EventHandler(this, &MyForm::btnCargar_Click);
             // 
             // MyForm
             // 
@@ -191,6 +202,7 @@ namespace FicherosConCSV {
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackColor = System::Drawing::SystemColors::Info;
             this->ClientSize = System::Drawing::Size(1148, 603);
+            this->Controls->Add(this->btnCargar);
             this->Controls->Add(this->btnOrdenar);
             this->Controls->Add(this->Filtros);
             this->Controls->Add(this->Alumnos);
@@ -204,6 +216,30 @@ namespace FicherosConCSV {
 #pragma endregion
 
     private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+    }
+
+    private: System::Void btnCargar_Click(System::Object^ sender, System::EventArgs^ e) {
+        // creamos la ventanita del explorador de Windows
+        OpenFileDialog^ dialogoAbrir = gcnew OpenFileDialog();
+
+        // La configuramos para que se vea profesional
+        dialogoAbrir->Title = "Selecciona tu archivo";
+        dialogoAbrir->Filter = "Archivos separados por comas (*.csv)|*.csv|Todos los archivos (*.*)|*.*";
+        dialogoAbrir->InitialDirectory = "C:\\"; // carpeta donde empieza a buscar
+
+        // mostramos la ventana y revisamos si el usuario le dio clic a Aceptar/Abrir
+        if (dialogoAbrir->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+
+            // obtenemos la ruta exacta del archivo que se eligió
+            String^ rutaElegida = dialogoAbrir->FileName;
+
+            // si no hacemos esto los datos nuevos se sumarán a los viejos
+            listaAlumnos->Clear();
+            Alumnos->Rows->Clear();
+
+            // llamamos a tu función de siempre, pero con la ruta nueva
+            LeerCSV(rutaElegida);
+        }
     }
 
     private:
@@ -226,7 +262,6 @@ namespace FicherosConCSV {
             //verificamos que el archivo este correctamente creado antes de leerlo
             if (!File::Exists(ruta)) 
             {
-                MessageBox::Show("Error: No se encontró el archivo");
                 return;
             }
 
@@ -316,5 +351,6 @@ namespace FicherosConCSV {
                 OrdenarDatosPorCampo(campoSeleccionado);
             }
         }
-    };
+
+};
 }
